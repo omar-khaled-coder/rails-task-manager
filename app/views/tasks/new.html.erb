@@ -1,0 +1,29 @@
+<h1 style="text-align:center;">add your task</h1>
+<br>
+
+<%# <form style="text-align:center;" action="/tasks", method="POST">
+    <div>
+      <label for="floatingInput">Add Task Name</label>
+      <input type="text" name="title" placeholder="Task title" class="form-control">
+      <br>
+
+      <label for="floatingInput">Add Task Details</label>
+      <input type="text" name="details" placeholder="Task details" class="form-control">
+      <br>
+
+      <label for="floatingInput">Completed?</label>
+      <input type="boolean" name="completed" placeholder="True or False" class="form-control">
+      <br>
+
+      <input type="submit" value="Add" class="btn btn-primary">
+    </div>
+  </form> %>
+<%= form_with model: @task do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :details %>
+  <%= f.text_field :details %>
+  <%= f.label :completed %>
+  <%= f.check_box :completed %>
+  <%= f.submit %>
+<% end %>

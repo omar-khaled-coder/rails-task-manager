@@ -1,0 +1,8 @@
+<h1 style="text-align:center;">Your Tasks Of The Day</h1>
+<ol class="list-group list-group-numbered" style="text-align:center;">
+  <% @tasks.each do |task| %>
+    <li><%= link_to task.title, task_path(task) %></li>
+  <% end %>
+</ol>
+
+<%= link_to 'add new task', '/tasks/new' %>
